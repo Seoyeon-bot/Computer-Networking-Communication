@@ -214,10 +214,9 @@ class snw:
                 try:
                     self.server_socket.settimeout(1)  # wait 1 second
                     ack, sender_addr = self.server_socket.recvfrom(1000) # recv ack from server/cache regarding leght_msg 
-                    ack = ack.decode()
                   #  print(f"[SNW send()] we got ACK : {ack}")
 
-                    if ack == "ACK":
+                    if (ack := ack.decode()) == "ACK":
                         ack_received = True
                       #  print("[Stop and Wait Send()]  Received ACK")
                     # additional
@@ -236,9 +235,8 @@ class snw:
                 try:
                     self.server_socket.settimeout(1)  # Set a timer for receiving ACKs for data chunks
                     ack, sender_addr = self.server_socket.recvfrom(1000)
-                    ack = ack.decode()
 
-                    if ack == "ACK":
+                    if (ack := ack.decode()) == "ACK":
                         ack_received = True
                       #  print(f"[send()]Received ACK from receiver {addr }")
 

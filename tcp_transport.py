@@ -116,10 +116,9 @@ class TCPTransport:
             size = 0 
             while size < len(data): 
                 chunk = data[size : size + chunk_size ]
-                sent = socket.send(chunk)
                 
                 # error handling 
-                if sent == 0: 
+                if (sent := socket.send(chunk)) == 0: 
                     raise RuntimeError("[-] Socket connection is broken -> Need to be reconnected. ")
                 size+=sent 
              #   print("[+] TCP is sending data ... ")
