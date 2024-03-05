@@ -173,7 +173,7 @@ def handle_get_request(transport, Filename, client_addr, server_ip, server_port)
                 file.close()
                 #transport.quit()  # close terminate
                 sys.exit(1) 
-        print(f"Server repsonse: File Delivered from cache")            
+        print("Server repsonse: File Delivered from cache")            
             
        # print("Data transfer completed.")
 
@@ -193,7 +193,7 @@ def handle_get_request(transport, Filename, client_addr, server_ip, server_port)
             transport.send_data("FIN-ACK".encode(), client_addr)
             
             #print("Data transfer completed.")
-        print(f"Server repsonse: File Delivered from origin")
+        print("Server repsonse: File Delivered from origin")
         
 
 

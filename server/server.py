@@ -186,7 +186,7 @@ def SNW_client_handle(data, client_address, snw_instance):
                 snw_instance.send_data(ack_msg, client_address); 
                 
         file.close()
-        print(f"Server response: File successfully uploaded.")
+        print("Server response: File successfully uploaded.")
         
     else:
         print("Unsupported method:", method)
